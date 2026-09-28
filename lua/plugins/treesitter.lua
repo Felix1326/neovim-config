@@ -25,7 +25,7 @@ return {
     -- 2. MODERN REPLACEMENT FOR `ensure_installed`
     -- Old way: passing a table into setup() would constantly reinstall things on startup.
     -- New way: Define your desired list, check what's already built, and install the rest.
-    local ensure_installed = { "lua", "vim", "vimdoc", "query", "bash", "markdown","rust","cpp","cmake", "python" }
+    local ensure_installed = { "lua","vim", "vimdoc", "query", "bash", "markdown","rust","cpp","cmake", "python" }
     local installed = require("nvim-treesitter.config").get_installed()
     
     local to_install = vim.iter(ensure_installed)
