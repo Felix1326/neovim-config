@@ -2,7 +2,9 @@ return
 {
   'saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  dependencies = { 'rafamadriz/friendly-snippets',
+		    'neovim/nvim-lspconfig',
+	},
 
   -- use a release tag to download pre-built binaries
   version = '1.*',
@@ -26,7 +28,7 @@ return
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = { preset = 'super-tab' },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -50,5 +52,14 @@ return
     -- See the fuzzy documentation for more information
     fuzzy = { implementation = "prefer_rust_with_warning" }
   },
-  opts_extend = { "sources.default" }
+  opts_extend = { "sources.default" },
+    config = function(_, opts)
+	require('blink.cmp').setup(opts)
+	local capabilities = require('blink.cmp').get_lsp_capabilities()
+	local lspconfig = require('lspconfig')
+	vim.lsp.config('*', {capabilities=capabilities})
+	vim.lsp.enable('texlab')
+	vim.lsp.enable('pyright')
+	vim.lsp.enable('clangd')
+	end,
 }

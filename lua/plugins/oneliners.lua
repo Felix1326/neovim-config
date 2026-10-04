@@ -11,4 +11,14 @@ return {
 	    require('nvim-highlight-colors').setup({})
 	end
     },
+    {
+	'mini.nvim',
+	config = function()
+	    require('mini.pairs').setup()
+	end
+    },
+    {
+    "mason-org/mason.nvim",
+    opts = {}
+    },
 }
