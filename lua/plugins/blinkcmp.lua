@@ -38,6 +38,8 @@ return
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = false } },
+    
+    snippets = {preset = 'luasnip'},
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -55,6 +57,9 @@ return
   opts_extend = { "sources.default" },
     config = function(_, opts)
 	require('blink.cmp').setup(opts)
+	require('luasnip.loaders.from_snipmate').lazy_load({
+		paths = {vim.fn.stdpath('config') .. '/snippets'},
+	    })
 	local capabilities = require('blink.cmp').get_lsp_capabilities()
 	local lspconfig = require('lspconfig')
 	vim.lsp.config('*', {capabilities=capabilities})

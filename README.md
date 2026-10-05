@@ -39,3 +39,12 @@ call plug#end()
 [tabular alignment](https://github.com/nvim-mini/mini.align)
 [rendering markdown](https://github.com/meanderingprogrammer/render-markdown.nvim)
 This should be about everything
+# Things to add to the nvim setup
+1. Spell checking for English and Dutch
+2. Error line highlighting for LaTeX like in overleaf
+3. Ability to open quick error window for compiling LaTeX
+4. LaTeX math snippets in luasnip
+5. Scrolling the window without scrolling the line --> Done
+6. Easily select the complete mathmode piece under the cursor
+7. Add harpoon
+8. After doing a jump, reverse mouse cursor movement
