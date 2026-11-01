@@ -48,3 +48,5 @@ This should be about everything
 6. Easily select the complete mathmode piece under the cursor
 7. Add harpoon
 8. After doing a jump, reverse mouse cursor movement
+9. Auto norm completion in markdown and LaTeX
+10. Auto sum, integral, limit, infimum, supremum snippets

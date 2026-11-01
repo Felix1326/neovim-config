@@ -16,5 +16,5 @@ vim.keymap.set("v","H","^")
 vim.keymap.set("n","H","^")
 vim.keymap.set("n","L","$")
 -- Create new line without going into insert mode
-vim.keymap.set('n', '<leader>o', 'o<Esc>', { desc = "New line below" })
-vim.keymap.set('n', '<leader>O', 'O<Esc>', { desc = "New line above" })
+--vim.keymap.set('n', '<leader>o', 'o<Esc>', { desc = "New line below" })
+--vim.keymap.set('n', '<leader>O', 'O<Esc>', { desc = "New line above" })
