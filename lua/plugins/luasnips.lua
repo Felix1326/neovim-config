@@ -7,11 +7,13 @@ return
 	    enable_autosnippets = true,
 	    history  = true,
 	    update_events = 'TextChanged,TextChangedI',
+	    store_selection_keys = "<Tab>",
 	},
 	-- install jsregexp (optional!).
 	build = "make install_jsregexp",
-	config = function()
+	config = function(_,opts)
 	    local ls = require("luasnip")
+	    ls.setup(opts) -- setup the optional parameters
 	    -- Load snippets lazily from a dedicated directory
 	    require("luasnip.loaders.from_lua").lazy_load({
 	      paths = { "~/.config/nvim/snippets" }

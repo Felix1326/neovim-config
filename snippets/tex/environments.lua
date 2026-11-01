@@ -9,4 +9,24 @@ local fmt = require("luasnip.extras.fmt").fmt -- Default insert {}
 local fmta = require("luasnip.extras.fmt").fmta -- Default insert <>
 local rep = require("luasnip.extras").rep
 
+return {
+    s(
+    { -- Parameter map
+        trig = "env",
+        dscr = "Create an environment",
+        snippetType="autosnippet", -- Either ''snippet' or 'autosnippet'
+        priority = 100,
+        regTrig = false, -- Stop the snippet from expanding when it is a part of a word
+    },
+    fmta(
+        [[
+	\begin{<>}
+	    <>
+	\end{<>}
+        ]],
+	{i(1),i(0),rep(1)}
 
+    )
+
+       ),
+}
